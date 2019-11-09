@@ -1,0 +1,11 @@
+TUGAS UJIAN TENGAH SEMESTER
+MATA KULIAH PEMOGRAMAN FRAMEWORK LANJUT KELAS DA
+
+OLEH : 
+MUHAMMAD AZHAR SALIM
+161240000590
+===============================================
+
+1. BUAT DATABASE DI MYSQL DENGAN NAMA "uts"
+2. Import file didalam folder database
+3. Coba ekseskusi dengan localhost/uts
