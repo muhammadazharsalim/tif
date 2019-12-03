@@ -375,8 +375,9 @@
 					<th>Aksi</th>
 				</tr>	
 			</thead>
-			<?php  $no = 1; foreach ($view as $a ) {?>
+			
 			<tbody>
+			<?php  $no = 1; foreach ($view as $a ) {?>
 				<tr>
 					<td><?php echo $no++; ?></td>
 					<td><?php echo $a['nim']; ?></td>
