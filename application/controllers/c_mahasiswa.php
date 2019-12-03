@@ -5,6 +5,14 @@ class C_mahasiswa extends CI_Controller {
 
     public function index(){
         $data['view'] = $this->m_mahasiswa->tampil();
+        $data['sum']=$this->m_mahasiswa->banyak();
+        $data['nomor']=$this->m_mahasiswa->merubah();
+        $data['viewlog'] = $this->m_mahasiswa->tampillog();
+        $this->load->view('v_dashboard',$data);
+    }
+
+    public function mahasiswa(){
+        $data['view'] = $this->m_mahasiswa->tampil();
         $this->load->view('v_datamahasiswa',$data);
     }
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Data Tables</title>
+  <title>AdminLTE 2 | Flot Charts</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -12,8 +12,6 @@
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/bower_components/Ionicons/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="<?php echo base_url() ?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url() ?>assets/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -269,7 +267,20 @@
                 </p>
               </li>
               <!-- Menu Body -->
-              
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
@@ -282,7 +293,9 @@
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
-          
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -334,18 +347,19 @@
     <!-- /.sidebar -->
   </aside>
 
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Tables
-        <small>advanced tables</small>
+        Flot Charts
+        <small>preview sample</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
+        <li><a href="#">Charts</a></li>
+        <li class="active">Flot</li>
       </ol>
     </section>
 
@@ -353,126 +367,65 @@
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
-         
-          <!-- /.box -->
+          <!-- interactive chart -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <i class="fa fa-bar-chart-o"></i>
 
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Data Table With Full Features</h3>
-              <div class="pull-right"><a class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal_add_new"> Tambah</a></div> 
+              <h3 class="box-title">Bar Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
             </div>
-
-            <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-striped">
-                <thead>              
-                <tr>
-					<th>No.</th>
-					<th>NIM</th>
-					<th>Nama Mahasiswa</th>
-					<th>Jenis Kelamin</th>
-					<th>Alamat</th>
-					<th>Nomor Hp</th>
-					<th>Belum paham Setingnya</th>
-				</tr>	
-			</thead>
-			
-			<tbody>
-        <?php  $no = 1; foreach ($view as $a ) {?>
-				<tr>
-					<td><?php echo $no++; ?></td>
-					<td><?php echo $a['nim']; ?></td>
-					<td><?php echo $a['nama_mahasiswa']; ?></td>
-					<td><?php echo $a['jenis_kelamin']; ?></td>
-					<td><?php echo $a['alamat']; ?></td>
-					<td><?php echo $a['nomer_hp']; ?></td>
-					<td style="width: 120px;">
-            <a class="btn btn-xs btn-info"> Edit</a>
-            <a class="btn btn-xs btn-danger"> Hapus</a>
-          </td>
-				</tr>
-				<?php  } ?>
-			</tbody>
-		</table>
+              <div id="bar-chart" style="height: 300px;"></div>
             </div>
-            <!-- /.box-body -->
+            <!-- /.box-body-->
           </div>
           <!-- /.box -->
         </div>
+        <!-- GRAFIK DATABASE -->
+        <div class="col-xs-12">
+          <!-- interactive chart -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <i class="fa fa-bar-chart-o"></i>
+
+              <h3 class="box-title">Rekapitulasi Mahasiswa</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div id="bar-chartdatabase" style="height: 300px;"></div>
+            </div>
+            <!-- /.box-body-->
+          </div>
+          <!-- /.box -->
+
+        </div>
         <!-- /.col -->
       </div>
-      <!-- /.row -->
+
+      
     </section>
     <!-- /.content -->
+
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.18
     </div>
-    <strong>Copyright &copy; 2019 <a href="unisnu.ac.id">UNISNU</a>.</strong> All rights
+    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
     reserved.
   </footer>
-  <!-- ============ MODAL ADD mahasiswa =============== -->
-        <div class="modal fade" id="modal_add_new" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-            <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                <h3 class="modal-title" id="myModalLabel">Add New mahasiswa</h3>
-            </div>
-            <form class="form-horizontal" method="post" action="<?php echo base_url().'c_mahasiswa/tambahdata'?>">
-                <div class="modal-body">
-
-                    <div class="form-group">
-                        <label class="control-label col-xs-3" >NIM mahasiswa</label>
-                        <div class="col-xs-8">
-                            <input name="nim" class="form-control" type="number" placeholder="NIM mahasiswa" required >
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-xs-3" >Nama mahasiswa</label>
-                        <div class="col-xs-8">
-                            <input name="nama_mahasiswa" class="form-control" maxlength="20" type="text" placeholder="Nama mahasiswa" required >
-                        </div>
-                    </div>
-
-                     <div class="form-group">
-                        <label class="control-label col-xs-3" >Jenis Kelamin</label>
-                        <div class="col-xs-8">
-                            <input name="jenis_kelamin" class="form-control" type="text" maxlength="1" placeholder="P/L" required >
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-xs-3" >Alamat</label>
-                        <div class="col-xs-8">
-                            <input name="alamat" class="form-control" type="text" maxlength="20" placeholder="Alamat Lengkap" required >
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-xs-3" >Nomor HP</label>
-                        <div class="col-xs-8">
-                            <input name="nomer_hp" class="form-control" type="number" placeholder="Nomor HP" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
-                    <button class="btn btn-info">Simpan</button>
-                </div>
-            </form>
-            </div>
-            </div>
-        </div>
-        <!-- TUTP MODAL -->
-
-        
-
-
 
   <!-- Control Sidebar -->
   
@@ -487,30 +440,94 @@
 <script src="<?php echo base_url() ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url() ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="<?php echo base_url() ?>assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url() ?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="<?php echo base_url() ?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="<?php echo base_url() ?>assets/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url() ?>assets/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url() ?>assets/dist/js/demo.js"></script>
-<!-- page script -->
+<!-- FLOT CHARTS -->
+<script src="<?php echo base_url() ?>assets/bower_components/Flot/jquery.flot.js"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="<?php echo base_url() ?>assets/bower_components/Flot/jquery.flot.resize.js"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="<?php echo base_url() ?>assets/bower_components/Flot/jquery.flot.pie.js"></script>
+<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+<script src="<?php echo base_url() ?>assets/bower_components/Flot/jquery.flot.categories.js"></script>
+<!-- Page script -->
 <script>
   $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': true,
-      'searching'   : true,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : true
+    /*
+     * Flot Interactive Chart
+     * -----------------------
+     */
+    // We use an inline data source in the example, usually data would
+    // be fetched from a server
+    var data = [], totalPoints = 100
+
+    /*
+     * BAR CHART
+     * ---------
+     */
+
+    var bar_data = {
+      data : [['January', 10], ['February', 8], ['March', 4], ['April', 13], ['May', 17], ['June', 9]],
+      color: '#3c8dbc'
+    }
+    $.plot('#bar-chart', [bar_data], {
+      grid  : {
+        borderWidth: 1,
+        borderColor: '#f3f3f3',
+        tickColor  : '#f3f3f3'
+      },
+      series: {
+        bars: {
+          show    : true,
+          barWidth: 0.5,
+          align   : 'center'
+        }
+      },
+      xaxis : {
+        mode      : 'categories',
+        tickLength: 0
+      }
     })
+    /* END BAR CHART */
+    var bar_database = {
+      data : [['jumlah Mahasiswa', <?php echo $sum;?>], ['jumlah ubah nomor', <?php echo $nomor;?>]],
+      color: '#3c8dbc'
+    }
+    $.plot('#bar-chartdatabase', [bar_database], {
+      grid  : {
+        borderWidth: 1,
+        borderColor: '#f3f3f3',
+        tickColor  : '#f3f3f3'
+      },
+      series: {
+        bars: {
+          show    : true,
+          barWidth: 0.5,
+          align   : 'center'
+        }
+      },
+      xaxis : {
+        mode      : 'categories',
+        tickLength: 0
+      }
+    })
+
   })
+
+  /*
+   * Custom Label formatter
+   * ----------------------
+   */
+  function labelFormatter(label, series) {
+    return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
+      + label
+      + '<br>'
+      + Math.round(series.percent) + '%</div>'
+  }
 </script>
 </body>
 </html>

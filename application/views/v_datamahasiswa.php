@@ -323,7 +323,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('c_mahasiswa');?>"><i class="fa fa-circle-o"></i> Kelola Mahasiswa</a></li>
+            <li><a href="<?php echo base_url('c_mahasiswa');?>"><i class="fa fa-circle-o"></i> Dashboard</a></li>
+            <li><a href="<?php echo base_url('c_mahasiswa/mahasiswa');?>"><i class="fa fa-circle-o"></i> Kelola Mahasiswa</a></li>
             <li><a href="<?php echo base_url('c_mahasiswa/modal');?>"><i class="fa fa-circle-o"></i> Modal Mahasiswa</a></li>
             <li><a href="<?php echo base_url('c_mahasiswa/rekap');?>"><i class="fa fa-circle-o"></i> Rekapitulasi Mahasiswa</a></li>
           </ul>
@@ -363,9 +364,9 @@
 
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-striped">
-                <thead>              
-                <tr>
+     <table id="mahasiswa" class="table table-bordered table-striped">
+      <thead>              
+        <tr>
 					<th>No.</th>
 					<th>NIM</th>
 					<th>Nama Mahasiswa</th>
@@ -377,7 +378,7 @@
 			</thead>
 			
 			<tbody>
-			<?php  $no = 1; foreach ($view as $a ) {?>
+        <?php  $no = 1; foreach ($view as $a ) {?>
 				<tr>
 					<td><?php echo $no++; ?></td>
 					<td><?php echo $a['nim']; ?></td>
@@ -386,9 +387,9 @@
 					<td><?php echo $a['alamat']; ?></td>
 					<td><?php echo $a['nomer_hp']; ?></td>
 					<td align="center">
-                    <a href="<?php echo base_url('c_mahasiswa/tampiledit/').$a['id_mahasiswa']; ?>"class="btn btn-xs btn-info">Ubah</a>
-                    <a href="<?php echo base_url('c_mahasiswa/hapus/').$a['id_mahasiswa']; ?>" class="btn btn-xs btn-danger">Hapus</a>
-                    </td>
+                <a href="<?php echo base_url('c_mahasiswa/tampiledit/').$a['id_mahasiswa']; ?>"class="btn btn-xs btn-info">Ubah</a>
+                <a href="<?php echo base_url('c_mahasiswa/hapus/').$a['id_mahasiswa']; ?>" class="btn btn-xs btn-danger">Hapus</a>
+          </td>
 				</tr>
 				<?php  } ?>
 			</tbody>
@@ -442,7 +443,7 @@
 <script>
   $(function () {
     $('#example1').DataTable()
-    $('#example2').DataTable({
+    $('#mahasiswa').DataTable({
       'paging'      : true,
       'lengthChange': true,
       'searching'   : true,

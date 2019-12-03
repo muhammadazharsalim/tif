@@ -324,7 +324,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('c_mahasiswa');?>"><i class="fa fa-circle-o"></i> Kelola Mahasiswa</a></li>
+            <li><a href="<?php echo base_url('c_mahasiswa');?>"><i class="fa fa-circle-o"></i> Dashboard</a></li>
+            <li><a href="<?php echo base_url('c_mahasiswa/mahasiswa');?>"><i class="fa fa-circle-o"></i> Kelola Mahasiswa</a></li>
+            <li><a href="<?php echo base_url('c_mahasiswa/modal');?>"><i class="fa fa-circle-o"></i> Modal Mahasiswa</a></li>
             <li><a href="<?php echo base_url('c_mahasiswa/rekap');?>"><i class="fa fa-circle-o"></i> Rekapitulasi Mahasiswa</a></li>
           </ul>
         </li>
